@@ -1,0 +1,13 @@
+.header {
+  margin-top: 10px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #ff912f;
+  &__logo {
+    display: block;
+    height: 40px;
+    background: url("../../images/logo.png") no-repeat;
+    background-size: contain;
+    background-position: right;
+    margin-right: 20px;
+  }
+}

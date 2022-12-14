@@ -1,0 +1,65 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  color: rgb(31, 30, 30);
+
+  &__file-convert {
+    // Button
+
+    background-color: #2f3590;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #2f3590;
+    transition: cubic-bezier(1, 0, 0, 1) 0.2s;
+    box-shadow: 0 0 0 2px black;
+    max-width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 1rem;
+
+    &:hover {
+      box-shadow: 0 0 0 2px black;
+      transform: scale(1.1);
+    }
+  }
+
+  &__text {
+    padding-left: 2rem;
+    padding-right: 1rem;
+
+    &__warning {
+      background-color: rgb(248, 163, 154);
+      padding: 1rem;
+      border: 1px solid rgb(80, 1, 1);
+      box-shadow: 0px 0px 2px rgb(0, 0, 0);
+      border-radius: 5px;
+
+      width: 70%;
+      margin: auto;
+
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__image_box {
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    background-color: ghostwhite;
+    border: 1px solid lightgray;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+  }
+}
