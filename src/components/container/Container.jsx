@@ -1,9 +1,17 @@
-import File_Upload from "../file_upload/File_Upload";
+import FileUpload from "../file_upload/File_Upload";
 import { useEffect, useState } from "react";
 import xls_to_csv from "../../utils/xls_to_csv";
 import mb_leftnav from "../../images/screenshots/mb-leftnav.png";
 import mb_report_history from "../../images/screenshots/mb-report-history.png";
 import mb_download from "../../images/screenshots/mb-download.png";
+import pbi_options from "../../images/screenshots/pbi-options.png";
+import pbi_datasource from "../../images/screenshots/pbi-datasource.png";
+import ls_copy from "../../images/screenshots/ls-copy.png";
+import ls_source from "../../images/screenshots/ls-source.png";
+import visualization_subject from "../../images/screenshots/visualization-subject.png";
+import visualization_overview from "../../images/screenshots/visualization-overview.png";
+import visualization_student from "../../images/screenshots/visualization-student.png";
+import email from "../../images/email.svg";
 
 const Container = () => {
   const [file, setFile] = useState(null);
@@ -40,6 +48,61 @@ const Container = () => {
       <h1>
         <u>ManageBac Diploma Term Grades</u>
       </h1>
+      <p className="container__text">
+        Understanding how our students are performing is the first step to
+        supporting their learning. This simple guide will get you started with
+        visualizing your ManageBac Diploma Term Grades.
+      </p>
+      <h2>The Visualizations</h2>
+      <p className="container__text">
+        These simple visualizations offer you three initials views of your data.
+        You can then use the data to create your own visualizations.
+      </p>
+      <h3>Overview Analytics:</h3>
+      <p className="container__text">
+        This visualization shows you the average grade for each subject, as well
+        as the total distribution of grades across all subjects. You can also
+        quickly see how many grades are included, the average grade, how many
+        7s, and how many students below a 4.
+      </p>
+      <div className="container__image_box container__image_box__large">
+        <img
+          src={visualization_overview}
+          alt="Overview Analytics"
+          className="container__image_box__image"
+        />
+      </div>
+      <h3>Subject Analytics:</h3>
+      <p className="container__text">
+        Ensuring that all classes receive the same level of education,
+        regardless of teacher, is crucial. These analytics allow you to see the
+        grade distribution across classes, as well as the lowest, average and
+        highest grade in each class. This is a great start for end of term or
+        year review within subject groups to ensure horizontal articulation of
+        curriculum and identify assessment variances across the program.
+      </p>{" "}
+      <div className="container__image_box container__image_box__large">
+        <img
+          src={visualization_subject}
+          alt="Subject Analytics"
+          className="container__image_box__image"
+        />
+      </div>{" "}
+      <h3>Student Analytics:</h3>
+      <p className="container__text">
+        This page allows you to see the total scores that students have across
+        the DP program. You can filter for certain grades (to see all students
+        who are excelling or struggling), as well as seeing each students HL, SL
+        and overall grades.
+      </p>{" "}
+      <div className="container__image_box container__image_box__large">
+        <img
+          src={visualization_student}
+          alt="Student Analytics"
+          className="container__image_box__image"
+        />
+      </div>{" "}
+      <h2>Table of Contents</h2>
       <div className="nav_pane">
         <ul className="nav_pane__list">
           <li className="nav_pane__list-item">
@@ -103,7 +166,6 @@ const Container = () => {
         />
       </div>
       <p className="container__text">Extract the zip file.</p>
-
       <h2 className="container__title" id="convert">
         {" "}
         Convert the file to CSV
@@ -127,7 +189,7 @@ const Container = () => {
         <b>Warning:</b> This file contains confidential information. Do not
         share it with anyone, and be careful where you upload it.
       </p>
-      <File_Upload setFile={setFile} />
+      <FileUpload setFile={setFile} />
       {file ? (
         <div
           className="container__file-convert"
@@ -140,7 +202,6 @@ const Container = () => {
       ) : (
         ""
       )}
-
       <h2 className="container__title" id="dashboard">
         {" "}
         Visualize it
@@ -149,31 +210,45 @@ const Container = () => {
         Once you have converted the file, you can visualize it using either
         PowerBI or Google Data Studio.
       </p>
-
       <h3 className="container__title" id="pbi">
         PowerBI
       </h3>
       <p className="container__text">
-        To visualize the file in PowerBI, you will need to download this file.
+        To visualize the file in PowerBI,{" "}
+        <a href="/MB_DP_Analytics.pbix">you will need to download this file.</a>
         This file already has dashboards setup with dummy data.
       </p>
       <p className="container__text">
+        If you do not have PowerBI,{" "}
         <a href="https://powerbi.microsoft.com/en-us/downloads/">
-          If you do not have PowerBI, you can download it for free here.
+          you can download it for free here.
         </a>
       </p>
       <p className="container__text">
         Once you have opened the PowerBI file, click on file in the top left
-        corner, and then Options, and then Data Source Settings.
+        corner, and then <u>Options and settings</u>.
       </p>
+      <div className="container__image_box">
+        <img
+          src={pbi_options}
+          alt="PowerBI Options"
+          className="container__image_box__image"
+        />
+      </div>
       <p className="container__text">
         Click on the "Change Source" button, and then select the CSV file that
         you converted.
       </p>
+      <div className="container__image_box">
+        <img
+          src={pbi_datasource}
+          alt="PowerBI Data Source"
+          className="container__image_box__image"
+        />
+      </div>
       <p className="container__text">
         You can now view the dashboards, and edit them to your liking.
       </p>
-
       <h3 className="container__title" id="ls">
         Looker Studio
       </h3>
@@ -186,14 +261,47 @@ const Container = () => {
       <p className="container__text">
         In the top right corner, click on the three dots and then click "Make a
         copy"
-      </p>
-      <p>
+      </p>{" "}
+      <div className="container__image_box">
+        <img
+          src={ls_copy}
+          alt="Looker Studio Copy"
+          className="container__image_box__image"
+        />
+      </div>
+      <p className="container__text">
         In the popup, select your csv as the data source (you will need to
         upload it to Google Drive first)
-      </p>
+      </p>{" "}
+      <div className="container__image_box">
+        <img
+          src={ls_source}
+          alt="Looker Studio Data Source"
+          className="container__image_box__image"
+        />
+      </div>
       <p className="container__text">
         You can now view the dashboards, and edit them to your liking.
       </p>
+      <h2>Going Further:</h2>
+      <p className="container__text">
+        We hope that these dashboards are useful to you. Feel free to share this
+        page and edit the dashboards to best suit your needs.
+      </p>
+      <p className="container__text">
+        At For.Education, we specialize is helping schools organize their data
+        and put it to use. If you would like to start a conversation and see how
+        For.Education can help your school, please don't hesitate to contact us.
+      </p>
+      <div className="container__image_box container__image_box__small">
+        <a href="mailto:ryan@for.education">
+          <img
+            src={email}
+            alt="PowerBI Data Source"
+            className="container__image_box__image"
+          />
+        </a>
+      </div>
     </div>
   );
 };
