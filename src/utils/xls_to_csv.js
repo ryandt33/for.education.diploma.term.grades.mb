@@ -68,22 +68,24 @@ const parse_xls = async (file) => {
         console.log(comment_index);
 
         for (let x = current_teacher_row + 2; x < next_teacher_row; x++) {
-          csv += `\n${teacher},${teachers[`A${x}`].v},${teachers[`B${x}`].v},${
-            teachers[`C${x}`].v
-          },${teachers[`D${x}`].v},${teachers[`E${x}`].v},${
-            teachers[`F${x}`].v
-          },${teachers[`G${x}`].v},${teachers[`H${x}`].v},${
+          csv += `\n"${teacher}","${teachers[`A${x}`].v}","${
+            teachers[`B${x}`].v
+          }","${teachers[`C${x}`].v}","${teachers[`D${x}`].v}","${
+            teachers[`E${x}`].v
+          }","${teachers[`F${x}`].v}","${teachers[`G${x}`].v}","${
             teachers[`H${x}`].v
-          } ${teachers[`G${x}`].v},${teachers[`J${x}`].v},${
+          }","${teachers[`H${x}`].v} ${teachers[`G${x}`].v}","${
+            teachers[`J${x}`].v
+          }","${
             isNaN(teachers[`K${x}`].v) ||
             teachers[`K${x}`].v.toString().match(/[a-zA-Z]/)
               ? -1
               : teachers[`K${x}`].v
-          }, ${
+          }", "${
             comment_index && teachers[`${comment_index}${x}`].v !== ""
               ? teachers[`${comment_index}${x}`].v ?? "No Comment"
               : "No Comment"
-          }`;
+          }"`;
         }
       }
 
