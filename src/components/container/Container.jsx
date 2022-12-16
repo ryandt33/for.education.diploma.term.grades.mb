@@ -53,6 +53,13 @@ const Container = () => {
           <br />
           <b>Warning:</b> This file contains confidential information. Do not
           share it with anyone, and be careful where you upload it.
+          <br />
+          <br />
+          If you would like to explore the source code for yourself{" "}
+          <a href="https://github.com/ryandt33/for.education.diploma.term.grades.mb">
+            it is available here
+          </a>
+          .
         </p>
         <FileUpload setFile={setFile} />
         {file ? (
