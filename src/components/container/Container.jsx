@@ -14,6 +14,7 @@ import ls_csv from "../../images/screenshots/ls-csv.png";
 import visualization_subject from "../../images/screenshots/visualization-subject.png";
 import visualization_overview from "../../images/screenshots/visualization-overview.png";
 import visualization_student from "../../images/screenshots/visualization-student.png";
+import visualization_report from "../../images/screenshots/visualization-report.png";
 import email from "../../images/email.svg";
 import Jumbotron from "../jumbotron/Jumbotron";
 
@@ -119,6 +120,24 @@ const Container = () => {
             className="container__image_box__image"
           />
         </div>{" "}
+        <h3>Report Analytics:</h3>
+        <p className="container__text">
+          This page shows potential issues with your reports. It allows you to
+          see missing grades and missing comments by class.
+        </p>
+        <p className="container__text">
+          <b>Note:</b> Due to limitations with data studio (calculated fields
+          aren't imported when making a copy), the widget has to normalize all
+          final grades into number values. Therefore, letter grades are replaced
+          with blanks by the process and will show up as missing.
+        </p>
+        <div className="container__image_box container__image_box__large">
+          <img
+            src={visualization_report}
+            alt="Report Analytics"
+            className="container__image_box__image"
+          />
+        </div>
       </div>
     ),
     how_to: (
