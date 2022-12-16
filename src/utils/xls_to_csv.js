@@ -31,15 +31,6 @@ const parse_xls = async (file) => {
 
     const a_column = keys.filter((key) => key.match(/A\d+/));
 
-    const adam_column = keys.find(
-      (key) =>
-        teachers[key].v &&
-        typeof teachers[key].v === "string" &&
-        teachers[key].v.includes("Adam Test Morris")
-    );
-
-    console.log(adam_column);
-
     const teachers_list = a_column.filter(
       (key) =>
         teachers[key].MergeAcross &&
@@ -86,9 +77,13 @@ const parse_xls = async (file) => {
           } ${teachers[`G${x}`].v},${teachers[`J${x}`].v},${
             isNaN(teachers[`K${x}`].v) ||
             teachers[`K${x}`].v.toString().match(/[a-zA-Z]/)
-              ? ""
+              ? -1
               : teachers[`K${x}`].v
-          }, ${comment_index ? teachers[`${comment_index}${x}`].v : ""}`;
+          }, ${
+            comment_index && teachers[`${comment_index}${x}`].v !== ""
+              ? teachers[`${comment_index}${x}`].v ?? "No Comment"
+              : "No Comment"
+          }`;
         }
       }
 
