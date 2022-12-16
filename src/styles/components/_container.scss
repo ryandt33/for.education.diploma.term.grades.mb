@@ -158,4 +158,37 @@
       max-width: 50px;
     }
   }
+
+  &__two-column {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    font-weight: 700;
+
+    & a {
+      text-decoration: none;
+      color: #2f3590;
+    }
+
+    & div {
+      background-color: ghostwhite;
+      border: 1px solid lightgray;
+      padding: 1rem;
+      border-radius: 5px;
+      width: 30%;
+      margin: 1rem;
+    }
+
+    &__img {
+      width: 100%;
+      max-width: 300px;
+      margin: auto;
+      margin-bottom: 1rem;
+      display: block;
+    }
+  }
 }

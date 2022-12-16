@@ -16,6 +16,8 @@ import visualization_overview from "../../images/screenshots/visualization-overv
 import visualization_student from "../../images/screenshots/visualization-student.png";
 import visualization_report from "../../images/screenshots/visualization-report.png";
 import email from "../../images/email.svg";
+import pbi from "../../images/pbi.png";
+import looker from "../../images/looker.png";
 import Jumbotron from "../jumbotron/Jumbotron";
 
 const Container = () => {
@@ -74,13 +76,40 @@ const Container = () => {
         ) : (
           ""
         )}
+        <h2>Visualizations</h2>
+        <p className="container__text">
+          These simple visualizations offer you four initials views of your
+          data. You can then use the data to create your own visualizations.
+        </p>
+        <div className="container__two-column">
+          <div className="container__two-column__left">
+            <a href="/MB_DP_Analytics.pbix">
+              <img
+                className="container__two-column__img"
+                src={pbi}
+                alt="PowerBI"
+              />
+              PowerBI File
+            </a>
+          </div>
+          <div className="container__two-column__right">
+            <a href="https://datastudio.google.com/reporting/e50a3387-e7cf-419e-94b7-982db707366b">
+              <img
+                className="container__two-column__img"
+                src={looker}
+                alt="Looer Studio"
+              />
+              Looker Studio Link
+            </a>
+          </div>
+        </div>
       </div>
     ),
     visualizations: (
       <div>
         <h2>The Visualizations</h2>
         <p className="container__text">
-          These simple visualizations offer you three initials views of your
+          These simple visualizations offer you four initials views of your
           data. You can then use the data to create your own visualizations.
         </p>
         <h3>Overview Analytics:</h3>
