@@ -103,6 +103,14 @@
       margin-top: 1rem;
       margin-right: 1rem;
 
+      @media screen and (max-width: 750px) {
+        & {
+          font-size: 1rem;
+          margin-right: 0.25rem;
+          padding: 0.25rem 0.25rem;
+        }
+      }
+
       &:hover {
         box-shadow: 0 0 0 1px black;
         transform: scale(1.03);
@@ -136,12 +144,12 @@
   }
 
   &__cta {
-    text-align: center;
+    text-align: right;
     background-color: #2f3590;
     color: white;
     padding: 1rem;
     padding-bottom: 2rem;
-    width: 80%;
+    width: 90%;
     margin: auto;
     border-radius: 5px;
     box-shadow: 0 0 2px rgb(31, 30, 30);
@@ -151,6 +159,8 @@
     & .container__text {
       display: inline-block;
       width: 60%;
+      text-align: left;
+      margin-right: 10%;
     }
 
     & .container__image_box {
@@ -181,6 +191,13 @@
       border-radius: 5px;
       width: 30%;
       margin: 1rem;
+
+      @media screen and (max-width: 750px) {
+        & {
+          display: block;
+          margin: auto;
+        }
+      }
     }
 
     &__img {

@@ -65,9 +65,10 @@ const parse_xls = async (file) => {
         const header_row = current_teacher_row + 1;
 
         const comment_index = get_comment_index(teachers, header_row);
-        console.log(comment_index);
 
         for (let x = current_teacher_row + 2; x < next_teacher_row; x++) {
+          console.log(teachers[`K${x}`].v);
+          console.log(teachers[`K${x}`].v === "N/A");
           csv += `\n"${teacher}","${teachers[`A${x}`].v}","${
             teachers[`B${x}`].v
           }","${teachers[`C${x}`].v}","${teachers[`D${x}`].v}","${
@@ -77,13 +78,15 @@ const parse_xls = async (file) => {
           }","${teachers[`H${x}`].v} ${teachers[`G${x}`].v}","${
             teachers[`J${x}`].v
           }","${
-            isNaN(teachers[`K${x}`].v) ||
-            teachers[`K${x}`].v.toString().match(/[a-zA-Z]/)
+            teachers[`K${x}`].v === "N/A"
               ? -1
+              : isNaN(teachers[`K${x}`].v) ||
+                teachers[`K${x}`].v.toString().match(/[a-zA-Z]/)
+              ? -2
               : teachers[`K${x}`].v
           }", "${
             comment_index && teachers[`${comment_index}${x}`].v !== ""
-              ? teachers[`${comment_index}${x}`].v ?? "No Comment"
+              ? "Comment"
               : "No Comment"
           }"`;
         }
